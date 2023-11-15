@@ -13,8 +13,7 @@ const App = () => {
         onClick={() => console.log('Button clicked')}
         className="custom-class"
         disabled={true}
-        style={{color:"red",backgroundColor:"black"}}
-        // Add any other props as needed
+        style={{ color: "red", backgroundColor: "black" }}
       >
         Click me
       </Button>
@@ -22,7 +21,6 @@ const App = () => {
         type="text"
         placeholder="Enter text"
         onChange={(e) => console.log('Input changed:', e.target.value)}
-        // Add any other props as needed
       />
       <Dropdown options={dropdownOptions} onChange={(e) => console.log('Dropdown changed:', e.target.value)} />
     </div>

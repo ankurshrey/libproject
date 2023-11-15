@@ -12,7 +12,7 @@ interface DropdownProps extends SelectHTMLAttributes<HTMLSelectElement> {
 
 const Dropdown = ({ options, ...rest }: DropdownProps) => {
   return (
-    <select {...rest}>
+    <select {...rest} data-testid="dropdown">
       {options.map((option, index) => (
         <option key={index} value={option}>
           {option}
