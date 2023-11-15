@@ -1,9 +1,9 @@
 // Example usage in another component
 
 import React from 'react';
-import Button from './component/Button';
-import InputBox from './component/InputBox';
-import Dropdown from './component/Dropdown';
+import Button from './component/Button/Button';
+import InputBox from './component/Input/InputBox';
+import Dropdown from './component/Dropdown/Dropdown';
 
 const App = () => {
   const dropdownOptions: (string | number)[] = ['Option 1', 'Option 2', 'Option 3', 1, 2, 3];
