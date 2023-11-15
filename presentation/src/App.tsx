@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Example usage in another component
 
-function App() {
+import React from 'react';
+import Button from './component/Button';
+import InputBox from './component/InputBox';
+import Dropdown from './component/Dropdown';
+
+const App = () => {
+  const dropdownOptions: (string | number)[] = ['Option 1', 'Option 2', 'Option 3', 1, 2, 3];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Button
+        onClick={() => console.log('Button clicked')}
+        className="custom-class"
+        disabled={false}
+        // Add any other props as needed
+      >
+        Click me
+      </Button>
+      <InputBox
+        type="text"
+        placeholder="Enter text"
+        onChange={(e) => console.log('Input changed:', e.target.value)}
+        // Add any other props as needed
+      />
+      <Dropdown options={dropdownOptions} onChange={(e) => console.log('Dropdown changed:', e.target.value)} />
     </div>
   );
-}
+};
 
 export default App;
