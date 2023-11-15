@@ -1,6 +1,5 @@
 // Example usage in another component
 
-import React from 'react';
 import Button from './component/Button';
 import InputBox from './component/InputBox';
 import Dropdown from './component/Dropdown';
@@ -12,7 +11,8 @@ const App = () => {
       <Button
         onClick={() => console.log('Button clicked')}
         className="custom-class"
-        disabled={false}
+        disabled={true}
+        style={{color:"red",backgroundColor:"black"}}
         // Add any other props as needed
       >
         Click me
