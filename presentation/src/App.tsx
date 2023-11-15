@@ -12,7 +12,8 @@ const App = () => {
       <Button
         onClick={() => console.log('Button clicked')}
         className="custom-class"
-        disabled={false}
+        disabled={true}
+        style={{color:"red",backgroundColor:"black"}}
         // Add any other props as needed
       >
         Click me
