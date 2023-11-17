@@ -19,6 +19,7 @@ const App = () => {
       </Button>
       <InputBox
         type="text"
+        required
         placeholder="Enter text"
         onChange={(e) => console.log('Input changed:', e.target.value)}
       />
