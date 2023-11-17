@@ -18,7 +18,7 @@ describe('Button Component', () => {
     const buttonElement = getByText('Click me');
 
     fireEvent.click(buttonElement);
-
+  
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
