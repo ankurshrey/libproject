@@ -3,10 +3,19 @@
 import React from 'react';
 import Button from './component/Button/Button';
 import InputBox from './component/Input/InputBox';
-import Dropdown from './component/Dropdown/Dropdown';
+import Dropdown, { Options } from './component/Dropdown/Dropdown';
 
 const App = () => {
-  const dropdownOptions: (string | number)[] = ['Option 1', 'Option 2', 'Option 3', 1, 2, 3];
+  const dropdownOptions: Options[] = [
+    {
+    id:"item 1",
+    value:"item 2"
+  },
+  {
+    id:"item 3",
+    value:"item 4"
+  }
+];
   return (
     <div>
       <Button
