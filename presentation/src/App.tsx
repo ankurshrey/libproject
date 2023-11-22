@@ -3,8 +3,8 @@
 import React from 'react';
 import Button from './component/Button/Button';
 import InputBox from './component/Input/InputBox';
-import Dropdown, { Options } from './component/Dropdown/Dropdown';
-
+import Dropdown from './component/Dropdown/Dropdown';
+import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 const App = () => {
   const dropdownOptions: Options[] = [
     {
