@@ -1,7 +1,8 @@
 // Dropdown.tsx
 
 import React, { SelectHTMLAttributes } from 'react';
-import Options  from '../../../../lib/@native/rkDropdown'
+//import Options  from '../../../../@lib/@native/rkDropdown'
+import { Options } from 'lib/@native/rkDropdown/dropdown.rk'
 // Define a type for the options that can be either string or number
 // type OptionType = string | number;
 // export interface Options {
