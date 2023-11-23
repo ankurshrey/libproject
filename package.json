@@ -6,7 +6,8 @@
   "workspaces": [
     "lib",
     "config",
-    "presentation"
+    "presentation",
+    "atoms"
   ],
   "license": "MIT"
 }

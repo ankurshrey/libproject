@@ -5,6 +5,7 @@ import Button from './component/Button/Button';
 import InputBox from './component/Input/InputBox';
 import Dropdown from './component/Dropdown/Dropdown';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
+import  Butt from 'atoms/src/atms/Butt';
 const App = () => {
   const dropdownOptions: Options[] = [
     {
@@ -33,6 +34,7 @@ const App = () => {
         onChange={(e) => console.log('Input changed:', e.target.value)}
       />
       <Dropdown options={dropdownOptions} onChange={(e) => console.log('Dropdown changed:', e.target.value)} />
+      <Butt>Click on</Butt>
     </div>
   );
 };
