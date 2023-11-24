@@ -14,6 +14,11 @@ const App = () => {
   {
     id:"item 3",
     value:"item 4"
+  },
+  {
+    id:"item 3",
+    value:"item 4",
+    isDisabled:true
   }
 ];
   return (
