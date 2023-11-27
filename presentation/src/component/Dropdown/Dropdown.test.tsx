@@ -66,23 +66,23 @@ describe('Dropdown', () => {
 
   test('renders and handles multiple select', () => {
     render(<Dropdown options={options} autoFocus={true} />);
-  
+
     // Check if the component renders with the correct options
     expect(screen.getByText('Option 1')).toBeInTheDocument();
     expect(screen.getByText('Option 2')).toBeInTheDocument();
     expect(screen.getByText('Option 3')).toBeInTheDocument();
-  
+
     // Check if the pre-selected option is selected
     const preSelectedOption = screen.getByText('Option 2') as HTMLOptionElement;
     expect(preSelectedOption.selected).toBe(true);
-  
+
     // Try to select another option
     userEvent.selectOptions(screen.getByTestId('dropdown'), '3');
-  
+
     // Check if the newly selected option is selected
     const newlySelectedOption = screen.getByText('Option 3') as HTMLOptionElement;
     expect(newlySelectedOption.selected).toBe(true);
-  
+
     // Check that the previously selected option is no longer selected
     expect(preSelectedOption.selected).toBe(false);
   });
