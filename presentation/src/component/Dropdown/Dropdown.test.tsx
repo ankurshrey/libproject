@@ -42,5 +42,26 @@ describe('Dropdown', () => {
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     expect(dropdownElement.value).toBe('2');
 });
+
+it('renders options correctly', () => {
+  const { getByTestId, getByText } = render(<Dropdown options={options} />);
+  const dropdown = getByTestId('dropdown');
+
+  expect(dropdown).toBeInTheDocument();
+
+  options.forEach((option) => {
+    const optionElement = getByText(option.value);
+    expect(optionElement).toBeInTheDocument();
+    expect(optionElement).toHaveValue(option.id);
+
+    if (option.isDisabled) {
+      expect(optionElement).toBeDisabled();
+    } else {
+      expect(optionElement).not.toBeDisabled();
+    }
+  });
+});
+
+
  
 });
