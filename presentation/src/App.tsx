@@ -8,19 +8,24 @@ import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 const App = () => {
   const dropdownOptions: Options[] = [
     {
-    id:"item 1",
-    value:"item 2"
-  },
-  {
-    id:"item 3",
-    value:"item 4"
-  },
-  {
-    id:"item 3",
-    value:"item 4",
-    isDisabled:true
-  }
-];
+      id: "item 1",
+      value: "item 2"
+    },
+    {
+      id: "item 3",
+      value: "item 4"
+    },
+    {
+      id: "item 3",
+      value: "item 4",
+      isDisabled: true
+    },
+    {
+      id: '2',
+      value: 'Option 2',
+      isSelected: true
+    }
+  ];
   return (
     <div>
       <Button
