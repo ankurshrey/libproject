@@ -21,7 +21,7 @@ interface DropdownProps extends SelectHTMLAttributes<HTMLSelectElement> {
 
 const Dropdown = ({ options, ...rest }: DropdownProps) => {
   return (
-    <select {...rest} data-testid="dropdown" >
+    <select {...rest} data-testid="dropdown" autoFocus multiple={true} >
       <option disabled  value="">--Please choose an option--</option>
       {options.map((item, index) => (
         (

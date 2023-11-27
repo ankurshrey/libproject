@@ -9,11 +9,13 @@ const App = () => {
   const dropdownOptions: Options[] = [
     {
       id: "item 1",
-      value: "item 2"
+      value: "item 2",
+      isSelected: true
     },
     {
       id: "item 3",
-      value: "item 4"
+      value: "item 4",
+      isSelected: true
     },
     {
       id: "item 3",

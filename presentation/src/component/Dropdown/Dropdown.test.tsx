@@ -3,7 +3,6 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import Dropdown from './Dropdown';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
-
 import { render, screen, fireEvent } from '@testing-library/react';
 
 
@@ -62,7 +61,4 @@ describe('Dropdown', () => {
       }
     });
   });
-
-
-
 });
