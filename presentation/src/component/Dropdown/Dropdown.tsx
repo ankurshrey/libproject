@@ -1,6 +1,6 @@
 
 
-import React, { SelectHTMLAttributes } from 'react';
+import React, { SelectHTMLAttributes, FocusEvent, ChangeEvent } from 'react';
 //import Options  from '../../../../@lib/@native/rkDropdown'
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk'
 
@@ -11,26 +11,32 @@ import { Options } from 'lib/@native/rkDropdown/dropdown.rk'
 //   value:string
 // }
 
-
-
 interface DropdownProps extends SelectHTMLAttributes<HTMLSelectElement> {
-  // Any additional props you want to accept
   options: Options[];
-  // autoFocus?: boolean;
+  onBlur?: (event: FocusEvent<HTMLSelectElement>) => void;
+  onFocus?: (event: FocusEvent<HTMLSelectElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Dropdown = ({ options, ...rest }: DropdownProps) => {
+const Dropdown = ({ options, onBlur, onFocus, onChange, ...rest }: DropdownProps) => {
+ 
   return (
-    <select {...rest} data-testid="dropdown" autoFocus multiple={true} >
-      <option disabled  value="">--Please choose an option--</option>
+    <select
+      {...rest}
+      data-testid="dropdown"
+      autoFocus={rest.autoFocus}
+      multiple={false}
+      onBlur={onBlur}
+      onFocus={onFocus}
+      onChange={onChange}
+    >
+      <option disabled value="">
+        --Please choose an option--
+      </option>
       {options.map((item, index) => (
-        (
-          <option key={index} value={item.id} disabled={item.isDisabled} selected={item.isSelected}>
-            {item.value}
-          </option>
-
-        )
-
+        <option key={index} value={item.id} disabled={item.isDisabled} selected={item.isSelected}>
+          {item.value}
+        </option>
       ))}
     </select>
   );
