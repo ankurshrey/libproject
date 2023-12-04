@@ -20,7 +20,7 @@ const App = () => {
         {
           id: 'item2',
           value: 'Item 2',
-          isSelected: true,
+          isSelected: false,
         },
       ],
     },
@@ -76,7 +76,7 @@ const App = () => {
       /> */}
       {/* <Dropdown options={dropdownOptions} onChange={(e) => alert(e.target.value + ' Dropdown changed')} /> */}
       {/* <Dropdown options={dropdownOptions} onChange={(event) => console.log('Change event', event)} /> */}
-      <Dropdown options={dropdownOptions} onBlur={(event) => console.log('Blur event', event)} onFocus={(event) => console.log('Focus event', event)} />
+      <Dropdown onChange={(e) => alert(e.target.value + ' Dropdown changed')} options={dropdownOptions} onBlur={(event) => console.log('Blur event', event)} onFocus={(event) => console.log('Focus event', event)}  />
 
 
     </div>
