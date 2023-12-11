@@ -1,10 +1,7 @@
-import React from 'react';
 import '@testing-library/jest-dom';
 import Dropdown from './Dropdown';
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, fireEvent } from '@testing-library/react';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
-
 
 //..............renders label and select element..................
 test('renders label and select element', () => {
@@ -26,22 +23,26 @@ test('renders options correctly', () => {
 //............renders selected options correctly............X
 test('renders selected options correctly', () => {
     const options = [
-        { id: 'item1', value: 'Item 1', isSelected: true },
-        { id: 'item2', value: 'Item 2' },
+        { id: 'item1', value: 'Item 1', isSelected: true }, 
+        { id: 'item2', value: 'Item 2'},
     ];
-    const { getByText, queryByText } = render(<Dropdown options={options} />);
+    
+    const { getByText, queryByText,container} = render(<Dropdown options={options} />);
+    const option=container.querySelectorAll("option")
+    // option?.hasAttribut
     expect(getByText('Item 1')).toHaveAttribute('selected');
+    
     expect(queryByText('Item 2')).not.toHaveAttribute('selected');
 });
+
 //.........renders selected options correctly..................
 test('renders option groups with labels', () => {
     const options = [
         { id: 'group1', label: 'Group 1', isOptionGroup: true, options: [] },
     ];
     const { getByText } = render(<Dropdown options={options} />);
-    expect(getByText('Group 1')).toBeInTheDocument();
     console.log(getByText);
-
+    expect(getByText('Group 1')).toBeInTheDocument();
 });
 //...........renders nested options within group.............
 test('renders nested options within group', () => {

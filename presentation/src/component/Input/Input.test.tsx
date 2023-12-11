@@ -1,29 +1,51 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import InputBox from '../Input/InputBox';
+import { render, screen } from '@testing-library/react';
+import InputBox from './InputBox';
 
-describe('InputBox Component', () => {
+describe('InputBox component', () => {
+    test('renders label and input with valid props', () => {
+        const inputs = {
+            type: 'text',
+            label: 'Username',
+            placeholder: 'Enter your username',
+        };
+        render(<InputBox inputs={inputs} />);
 
-    it('renders the input box correctly', () => {
-        const { getByPlaceholderText } = render(<InputBox type="text" placeholder="Enter text" />);
-        const inputElement = getByPlaceholderText('Enter text');
-
-        expect(inputElement).toBeInTheDocument();
+        expect(screen.getByText('Username')).toBeInTheDocument();
+        expect(screen.getByRole('textbox', { name: 'Username' })).toBeInTheDocument();
     });
 
-    it('calls the onChange function when input value changes', () => {
-        const onChangeMock = jest.fn();
-        const { getByPlaceholderText } = render(
-            <InputBox type="text" placeholder="Enter text" onChange={onChangeMock} />
-        );
-        const inputElement = getByPlaceholderText('Enter text') as HTMLInputElement; // Explicit cast
+    test('renders input with placeholder from props', () => {
+        const inputs = {
+            type: 'password',
+            label: 'Password',
+            placeholder: 'Enter your password',
+        };
+        render(<InputBox inputs={inputs} />);
 
-        fireEvent.change(inputElement, { target: { value: 'new value' } });
-
-        expect(onChangeMock).toHaveBeenCalledTimes(1);
-        expect(inputElement.value).toBe('new value');
+        expect(screen.getByPlaceholderText('Enter your password')).toBeInTheDocument();
     });
 
-    // Add more test cases as needed
+    test('renders optional props like required', () => {
+        const inputs = {
+            type: 'email',
+            label: 'Email',
+            placeholder: 'Enter your email',
+            required: true,
+        };
+        render(<InputBox inputs={inputs} />);
+
+        expect(screen.getByRole('textbox', { name: 'Email' })).toHaveAttribute('required');
+    });
+
+    test('passes additional props to input element', () => {
+        const inputs = {
+            type: 'number',
+            label: 'Age',
+            placeholder: 'Enter your age',
+            id: 'ageInput',
+        };
+        render(<InputBox inputs={inputs} data-testid="custom-input" />);
+        expect(screen.getByTestId('custom-input')).toHaveAttribute('id', 'ageInput');
+    });
 });
