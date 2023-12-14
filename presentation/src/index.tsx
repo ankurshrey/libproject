@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { emphasize } from '@mui/material';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 
-
+import './config/config.json'
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -64,7 +64,7 @@ const dropdownOptions: Options[] = [
 ];
 root.render(
   <React.StrictMode>
-    <AppContext.Provider value='./config.json'  >
+    <AppContext.Provider value='../config.json'  >
     <App />
    </AppContext.Provider>
   </React.StrictMode>

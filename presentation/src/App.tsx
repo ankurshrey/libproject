@@ -1,14 +1,47 @@
 // Example usage in another component
 
-import React ,{ createContext } from 'react';
+import React ,{ createContext, useContext, useEffect, useState } from 'react';
 import Button from './component/Button/Button';
 import InputBox from './component/Input/InputBox';
 import Dropdown from './component/Dropdown/Dropdown';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 import { AppContext } from './index'
+//import './config/config.json'
+
 // const UserContext = createContext('')
 const UserContext = createContext<any>(undefined);
+
 const App = () => {
+  const [fileContent, setFileContent] = useState(null);
+  const configPath = useContext(AppContext);
+
+  useEffect(()=>{
+
+
+ const fetchData = async () => {
+
+  try {
+    // Fetch the file using the path
+    const response = await fetch(`${configPath}`);
+     console.log("response",response)
+    if (!response.ok) {
+      throw new Error(`Failed to fetch file: ${response.statusText}`);
+    }
+
+    // Parse the JSON content
+    const data = await response.json();
+
+    // Set the file content in the state
+    setFileContent(data);
+    console.log("first",data)
+  } catch (error) {
+    console.error(error);
+  }
+
+ }
+ fetchData()
+  },[])
+
   const dropdownOptions: Options[] = [
     {
       id: 'group1',
@@ -60,6 +93,7 @@ const App = () => {
       isSelected: true,
     },
   ];
+   
  
   return (
     <div>
