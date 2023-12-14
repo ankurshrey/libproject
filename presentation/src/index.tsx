@@ -64,7 +64,7 @@ const dropdownOptions: Options[] = [
 ];
 root.render(
   <React.StrictMode>
-    <AppContext.Provider value='njsfdsljf' >
+    <AppContext.Provider value='./config.json'  >
     <App />
    </AppContext.Provider>
   </React.StrictMode>
