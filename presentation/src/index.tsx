@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { emphasize } from '@mui/material';
+// import { emphasize } from '@mui/material';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 
 import './config/config.json'

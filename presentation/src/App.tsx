@@ -1,6 +1,6 @@
 // Example usage in another component
 
-import React ,{ createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import Button from './component/Button/Button';
 import InputBox from './component/Input/InputBox';
 import Dropdown from './component/Dropdown/Dropdown';
@@ -15,32 +15,32 @@ const App = () => {
   const [fileContent, setFileContent] = useState(null);
   const configPath = useContext(AppContext);
 
-  useEffect(()=>{
+  useEffect(() => {
 
 
- const fetchData = async () => {
+    const fetchData = async () => {
 
-  try {
-    // Fetch the file using the path
-    const response = await fetch(`${configPath}`);
-     console.log("response",response)
-    if (!response.ok) {
-      throw new Error(`Failed to fetch file: ${response.statusText}`);
+      try {
+        // Fetch the file using the path
+        const response = await fetch('/config.json');
+        console.log("response", response)
+        if (!response.ok) {
+          throw new Error(`Failed to fetch file: ${response.statusText}`);
+        }
+
+        // Parse the JSON content
+        const data = await response.json();
+
+        // Set the file content in the state
+        setFileContent(data);
+        console.log("first", data)
+      } catch (error) {
+        console.error(error);
+      }
+
     }
-
-    // Parse the JSON content
-    const data = await response.json();
-
-    // Set the file content in the state
-    setFileContent(data);
-    console.log("first",data)
-  } catch (error) {
-    console.error(error);
-  }
-
- }
- fetchData()
-  },[])
+    fetchData()
+  }, [])
 
   const dropdownOptions: Options[] = [
     {
@@ -68,19 +68,19 @@ const App = () => {
         {
           id: 'item3',
           value: 'Item 3',
-         
+
         },
         {
           id: 'item4',
           value: 'Item 4',
-         
+
         },
       ],
     },
     {
       id: 'item5',
       value: 'Item 5',
-      
+
     },
     {
       id: 'item6',
@@ -93,22 +93,22 @@ const App = () => {
       isSelected: true,
     },
   ];
-   
- 
+
+
   return (
     <div>
       <label>
         <AppContext.Consumer>
-        {
-          
-        (val)=>{
-          return   <Dropdown onChange={(e) => console.log(val)} options={dropdownOptions} onBlur={(event) => console.log('Blur event', event)} onFocus={(event) => console.log('Focus event', event)}  />
+          {
 
-        }
-      }
+            (val) => {
+              return <Dropdown onChange={(e) => console.log(val)} options={dropdownOptions} onBlur={(event) => console.log('Blur event', event)} onFocus={(event) => console.log('Focus event', event)} />
+
+            }
+          }
         </AppContext.Consumer>
       </label>
-    
+
       <Button
         onClick={() => console.log('Button clicked')}
         className="custom-class"
@@ -126,7 +126,7 @@ const App = () => {
       {/* <Dropdown options={dropdownOptions} onChange={(e) => alert(e.target.value + ' Dropdown changed')} /> */}
       {/* <Dropdown options={dropdownOptions} onChange={(event) => console.log('Change event', event)} /> */}
       <UserContext.Provider value='hello context' >
-      <Dropdown onChange={(e) => alert(e.target.value + ' Dropdown changed')} options={dropdownOptions} onBlur={(event) => console.log('Blur event', event)} onFocus={(event) => console.log('Focus event', event)}  />
+        <Dropdown onChange={(e) => alert(e.target.value + ' Dropdown changed')} options={dropdownOptions} onBlur={(event) => console.log('Blur event', event)} onFocus={(event) => console.log('Focus event', event)} />
 
       </UserContext.Provider>
 
@@ -136,4 +136,4 @@ const App = () => {
 };
 
 export default App;
-export {UserContext}
+export { UserContext }
