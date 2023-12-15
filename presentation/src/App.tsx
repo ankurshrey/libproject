@@ -6,6 +6,7 @@ import InputBox from './component/Input/InputBox';
 import Dropdown from './component/Dropdown/Dropdown';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 import { AppContext } from './index'
+import { InputTypes } from 'lib/@native/rkInputs/input.rk';
 //import './config/config.json'
 
 // const UserContext = createContext('')
@@ -93,7 +94,11 @@ const App = () => {
       isSelected: true,
     },
   ];
-
+const inputType:InputTypes={
+  type: 'checkbox',
+  label: 'ckecked',
+  placeholder: 'Enter The Name'
+}
 
   return (
     <div>
@@ -109,20 +114,16 @@ const App = () => {
         </AppContext.Consumer>
       </label>
 
-      <Button
+      {/* <Button
         onClick={() => console.log('Button clicked')}
         className="custom-class"
         disabled={true}
         style={{ color: "red", backgroundColor: "black" }}
       >
         Click me
-      </Button>
-      {/* <InputBox
-        type="text"
-        required
-        placeholder="Enter text"
-        onChange={(e) => console.log('Input changed:', e.target.value)}
-      /> */}
+      </Button> */}
+      <InputBox
+        onChange={(e) => console.log('Input changed:', e.target.value)} inputs={inputType}      />
       {/* <Dropdown options={dropdownOptions} onChange={(e) => alert(e.target.value + ' Dropdown changed')} /> */}
       {/* <Dropdown options={dropdownOptions} onChange={(event) => console.log('Change event', event)} /> */}
       <UserContext.Provider value='hello context' >
