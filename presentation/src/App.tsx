@@ -97,7 +97,7 @@ const App = () => {
     },
   ];
 const inputType:InputTypes={
-  type: 'checkbox',
+  type: 'text',
   label: 'ckecked',
   placeholder: 'Enter The Name'
 }
