@@ -1,0 +1,26 @@
+{
+    "Controls": [
+      {
+        "id": "",
+        "label": "",
+        "type": "",
+        "placeholder":"",
+        "source":{
+          "source":"",
+          "data":"",
+          "uri":""
+        }
+      },
+        {
+        "id": "",
+        "label": "",
+        "type": "",
+        "placeholder":"",
+        "source":{
+          "source":"",
+          "data":"",
+          "uri":""
+        }
+      }
+    ]
+  }

@@ -7,12 +7,14 @@ import Dropdown from './component/Dropdown/Dropdown';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 import { AppContext } from './index'
 import { InputTypes } from 'lib/@native/rkInputs/input.rk';
+import PrimaryPage from './component/PrimaryPage';
 //import './config/config.json'
 
 // const UserContext = createContext('')
 const UserContext = createContext<any>(undefined);
 
 const App = () => {
+
   const [fileContent, setFileContent] = useState(null);
   const configPath = useContext(AppContext);
 
@@ -21,13 +23,13 @@ const App = () => {
 
     const fetchData = async () => {
 
-      try {
-        // Fetch the file using the path
-        const response = await fetch('/config.json');
-        console.log("response", response)
-        if (!response.ok) {
-          throw new Error(`Failed to fetch file: ${response.statusText}`);
-        }
+  try {
+    // Fetch the file using the path
+    const response = await fetch(configPath);
+     console.log("response",response)
+    if (!response.ok) {
+      throw new Error(`Failed to fetch file: ${response.statusText}`);
+    }
 
         // Parse the JSON content
         const data = await response.json();
@@ -130,6 +132,8 @@ const inputType:InputTypes={
         <Dropdown onChange={(e) => alert(e.target.value + ' Dropdown changed')} options={dropdownOptions} onBlur={(event) => console.log('Blur event', event)} onFocus={(event) => console.log('Focus event', event)} />
 
       </UserContext.Provider>
+      
+      <PrimaryPage />
 
 
     </div>
