@@ -11,7 +11,7 @@ const InputBox = ({ inputs, ...rest }: InputBoxProps) => {
   return (
     <>
     <label>{inputs.label}</label>
-    <input {...rest} required={inputs.required} type={inputs.type} placeholder={inputs.placeholder}/>
+    <input  {...rest} required={inputs.required} type={inputs.type} placeholder={inputs.placeholder}/>
     </>
   );
 };
