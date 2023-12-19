@@ -1,38 +1,40 @@
-[
-  {
-    "id": "input1",
-    "type": "text",
-    "label": "Input 1",
-    "placeholder": "Enter text",
-    "required": true,
-    "source":{
-      "source":"",
-      "data":"",
-      "uri":""
+{
+  "Controls":[
+    {
+      "id": "input1",
+      "type": "text",
+      "label": "Input 1",
+      "placeholder": "Enter text",
+      "required": true,
+      "source":{
+        "source":"",
+        "data":"",
+        "uri":""
+      }
+    },
+    {
+      "id": "input2",
+      "type": "number",
+      "label": "Input 2",
+      "placeholder": "Enter number",
+      "required": false,
+      "source":{
+        "source":"",
+        "data":"",
+        "uri":""
+      }
+    },
+    {
+      "id": "input3",
+      "type": "checkbox",
+      "label": "Input 2",
+      "placeholder": "Enter check",
+      "required": false,
+      "source":{
+        "source":"",
+        "data":"",
+        "uri":""
+      }
     }
-  },
-  {
-    "id": "input2",
-    "type": "number",
-    "label": "Input 2",
-    "placeholder": "Enter number",
-    "required": false,
-    "source":{
-      "source":"",
-      "data":"",
-      "uri":""
-    }
-  },
-  {
-    "id": "input3",
-    "type": "checkbox",
-    "label": "Input 2",
-    "placeholder": "Enter check",
-    "required": false,
-    "source":{
-      "source":"",
-      "data":"",
-      "uri":""
-    }
-  }
-]
+  ]
+} 

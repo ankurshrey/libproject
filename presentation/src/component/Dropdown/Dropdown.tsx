@@ -1,22 +1,12 @@
 import { SelectHTMLAttributes } from 'react';
 import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 import React from 'react';
-import { UserContext } from '../../App';
-
 interface DropdownProps extends SelectHTMLAttributes<HTMLSelectElement> {
   options: Options[];
 }
 const Dropdown = ({ options, onBlur, onFocus, onChange, ...rest }: DropdownProps) => {
   return (
     <label>
-     <UserContext.Consumer>
-      {
-        (val)=>{
-          return <h1>please select dropdown {val}</h1>
-        }
-      }
-     </UserContext.Consumer>
-
       <select
         {...rest}
         data-testid="dropdown"

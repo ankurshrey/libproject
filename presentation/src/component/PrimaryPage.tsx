@@ -17,12 +17,11 @@ const PrimaryPage = () => {
         }
 
         const data = await response.json();
-        setControls(data);
+        setControls(data.Controls);
       } catch (error) {
         console.error(error);
       }
     };
-
     fetchData();
   }, [configPath]);
 
