@@ -1,40 +1,58 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
-import { AppContext } from '../index'
+import React, { useEffect, useState, useContext } from 'react';
+import { AppContext } from '../index';
+import InputBox from './Input/InputBox';
+import { InputTypes } from 'lib/@native/rkInputs/input.rk';
 
+// interface Control {
+//   id: string;
+//   label: string;
+//   type: string;
+//   placeholder: string;
+//   required?: boolean;
+// }
+
+// interface PrimaryBoxProps {
+//   controls: Control[];
+// }
+const x:InputTypes={
+  id:'text1',
+  label:'hello',
+  type:'text'
+}
 const PrimaryPage = () => {
   const configPath = useContext(AppContext);
-  const [fileContent, setFileContent] = useState(null);
+  const [controls, setControls] = useState<InputTypes[]>([]); // Provide an initial state
 
-  console.log("nkdvnlkdnv",configPath)
   useEffect(() => {
-
-
     const fetchData = async () => {
+      try {
+        const response = await fetch(configPath);
 
-  try {
-    // Fetch the file using the path
-    const response = await fetch(configPath);
-     console.log("response",response)
-    if (!response.ok) {
-      throw new Error(`Failed to fetch file: ${response.statusText}`);
-    }
+        if (!response.ok) {
+          throw new Error(`Failed to fetch file: ${response.statusText}`);
+        }
 
-        // Parse the JSON content
         const data = await response.json();
-
-        // Set the file content in the state
-        setFileContent(data);
-        console.log("second", data)
+        setControls(data);
       } catch (error) {
         console.error(error);
       }
+    };
 
-    }
-    fetchData()
-  }, [])
-  return(
-    <h1>primary page</h1>
-  )
-}
+    fetchData();
+  }, [configPath]); // Include configPath as a dependency for useEffect
 
-export default PrimaryPage
+  console.log("prime",controls)
+  
+  return (
+    <div>      
+    <InputBox inputs={x}/>
+    {/* {controls?.map((control) => (
+        <InputBox key={control.id} inputs={control} />
+      ))} */}
+
+    </div>
+  );
+};
+
+export default PrimaryPage;

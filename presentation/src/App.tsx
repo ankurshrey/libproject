@@ -8,6 +8,8 @@ import { Options } from 'lib/@native/rkDropdown/dropdown.rk';
 import { AppContext } from './index'
 import { InputTypes } from 'lib/@native/rkInputs/input.rk';
 import PrimaryPage from './component/PrimaryPage';
+import config from '../public/config.json'
+import { Control } from './config/config'
 //import './config/config.json'
 
 // const UserContext = createContext('')
@@ -96,11 +98,11 @@ const App = () => {
       isSelected: true,
     },
   ];
-const inputType:InputTypes={
-  type: 'text',
-  label: 'ckecked',
-  placeholder: 'Enter The Name'
-}
+// const inputType:InputTypes={
+//   type: 'text',
+//   label: 'ckecked',
+//   placeholder: 'Enter The Name'
+// }
 
   return (
     <div>
@@ -124,17 +126,17 @@ const inputType:InputTypes={
       >
         Click me
       </Button> */}
-      <InputBox
-        onChange={(e) => console.log('Input changed:', e.target.value)} inputs={inputType}      />
+      {/* <InputBox
+        onChange={(e) => console.log('Input changed:', e.target.value)} inputs={inputType}      /> */}
       {/* <Dropdown options={dropdownOptions} onChange={(e) => alert(e.target.value + ' Dropdown changed')} /> */}
       {/* <Dropdown options={dropdownOptions} onChange={(event) => console.log('Change event', event)} /> */}
       <UserContext.Provider value='hello context' >
         <Dropdown onChange={(e) => alert(e.target.value + ' Dropdown changed')} options={dropdownOptions} onBlur={(event) => console.log('Blur event', event)} onFocus={(event) => console.log('Focus event', event)} />
 
       </UserContext.Provider>
-      
-      <PrimaryPage />
 
+
+      <PrimaryPage />
 
     </div>
   );

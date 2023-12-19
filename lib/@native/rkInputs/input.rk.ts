@@ -1,8 +1,10 @@
 export interface InputTypes {
-    type: string,
-    label: string
+    id?:string,
+    type?: string,
+    label?: string
     placeholder?: string,
     required?: boolean,
+    checkboxLabel?:string
 }
 
 export class RKInput{

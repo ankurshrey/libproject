@@ -8,6 +8,7 @@ describe('InputBox component', () => {
             type: 'text',
             label: 'Username',
             placeholder: 'Enter your username',
+            id:'text1'
         };
         render(<InputBox inputs={inputs} />);
 
@@ -20,6 +21,7 @@ describe('InputBox component', () => {
             type: 'password',
             label: 'Password',
             placeholder: 'Enter your password',
+            id:'text1'
         };
         render(<InputBox inputs={inputs} />);
 
@@ -32,6 +34,8 @@ describe('InputBox component', () => {
             label: 'Email',
             placeholder: 'Enter your email',
             required: true,
+            id:'text1'
+
         };
         render(<InputBox inputs={inputs} />);
 

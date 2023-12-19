@@ -1,26 +1,17 @@
 {
-    "Controls": [
-      {
-        "id": "",
-        "label": "",
-        "type": "",
-        "placeholder":"",
-        "source":{
-          "source":"",
-          "data":"",
-          "uri":""
-        }
-      },
-        {
-        "id": "",
-        "label": "",
-        "type": "",
-        "placeholder":"",
-        "source":{
-          "source":"",
-          "data":"",
-          "uri":""
-        }
-      }
-    ]
-  }
+  "controls": [
+    {
+      "id": "input1",
+      "label": "Input 1",
+      "type": "text",
+      "placeholder": "Enter text for Input 1"
+    },
+    {
+      "id": "checkbox1",
+      "label": "Checkbox 1",
+      "type": "checkbox",
+      "checkboxLabel": "Check this box",
+      "required": true
+    }
+  ]
+}
