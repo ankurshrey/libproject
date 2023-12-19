@@ -1,17 +1,38 @@
-{
-  "controls": [
-    {
-      "id": "input1",
-      "label": "Input 1",
-      "type": "text",
-      "placeholder": "Enter text for Input 1"
-    },
-    {
-      "id": "checkbox1",
-      "label": "Checkbox 1",
-      "type": "checkbox",
-      "checkboxLabel": "Check this box",
-      "required": true
+[
+  {
+    "id": "input1",
+    "type": "text",
+    "label": "Input 1",
+    "placeholder": "Enter text",
+    "required": true,
+    "source":{
+      "source":"",
+      "data":"",
+      "uri":""
     }
-  ]
-}
+  },
+  {
+    "id": "input2",
+    "type": "number",
+    "label": "Input 2",
+    "placeholder": "Enter number",
+    "required": false,
+    "source":{
+      "source":"",
+      "data":"",
+      "uri":""
+    }
+  },
+  {
+    "id": "input3",
+    "type": "checkbox",
+    "label": "Input 2",
+    "placeholder": "Enter check",
+    "required": false,
+    "source":{
+      "source":"",
+      "data":"",
+      "uri":""
+    }
+  }
+]

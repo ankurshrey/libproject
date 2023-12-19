@@ -3,25 +3,9 @@ import { AppContext } from '../index';
 import InputBox from './Input/InputBox';
 import { InputTypes } from 'lib/@native/rkInputs/input.rk';
 
-// interface Control {
-//   id: string;
-//   label: string;
-//   type: string;
-//   placeholder: string;
-//   required?: boolean;
-// }
-
-// interface PrimaryBoxProps {
-//   controls: Control[];
-// }
-const x:InputTypes={
-  id:'text1',
-  label:'hello',
-  type:'text'
-}
 const PrimaryPage = () => {
   const configPath = useContext(AppContext);
-  const [controls, setControls] = useState<InputTypes[]>([]); // Provide an initial state
+  const [controls, setControls] = useState<InputTypes[]>([]); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,17 +24,17 @@ const PrimaryPage = () => {
     };
 
     fetchData();
-  }, [configPath]); // Include configPath as a dependency for useEffect
+  }, [configPath]);
 
-  console.log("prime",controls)
-  
   return (
-    <div>      
-    <InputBox inputs={x}/>
-    {/* {controls?.map((control) => (
-        <InputBox key={control.id} inputs={control} />
-      ))} */}
-
+    <div>
+      {controls.length > 0 ? (
+        controls.map((control) => (
+          <InputBox key={control.id} inputs={control} />
+        ))
+      ) : (
+        <div>No controls available</div>
+      )}
     </div>
   );
 };
