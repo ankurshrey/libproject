@@ -1,10 +1,9 @@
-import PrimaryPage from './component/PrimaryPage';
+import PrimaryPage from "./component/PrimaryPage";
 const App = () => {
-return (
-    <div>
-    <PrimaryPage />
-   </div>
+  return (
+    <div className="App">
+      <PrimaryPage />
+    </div>
   );
 };
 export default App;
-

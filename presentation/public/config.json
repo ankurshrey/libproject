@@ -1,40 +1,186 @@
 {
-  "Controls":[
+  "Controls": [
     {
-      "id": "input1",
+      "id": "1",
+      "input": "input",
       "type": "text",
       "label": "Input 1",
       "placeholder": "Enter text",
       "required": true,
-      "source":{
-        "source":"",
-        "data":"",
-        "uri":""
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
       }
     },
     {
-      "id": "input2",
-      "type": "number",
-      "label": "Input 2",
-      "placeholder": "Enter number",
+      "id": "2",
+      "button": "button",
+      "type": "submit",
+      "label": "button",
+      "placeholder": "",
       "required": false,
-      "source":{
-        "source":"",
-        "data":"",
-        "uri":""
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
       }
     },
     {
-      "id": "input3",
+      "id": "3",
+      "input": "input",
       "type": "checkbox",
       "label": "Input 2",
       "placeholder": "Enter check",
       "required": false,
-      "source":{
-        "source":"",
-        "data":"",
-        "uri":""
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
       }
+    },
+    {
+      "id": "4",
+      "button": "button",
+      "type": "submit",
+      "label": "Click",
+      "placeholder": "",
+      "required": false,
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
+      }
+    },
+    {
+      "id": "5",
+      "dropdown": "dropdown",
+      "type": "submit",
+      "label": "Click",
+      "placeholder": "",
+      "required": false,
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
+      }
+    },
+    {
+      "id": "6",
+      "textarea": "textarea",
+      "type": "textarea",
+      "label": "Address",
+      "placeholder": "write here something",
+      "required": false,
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
+      }
+    },
+    {
+      "id": "7",
+      "button": "button",
+      "type": "submit",
+      "label": "login",
+      "placeholder": "",
+      "required": false,
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
+      }
+    },
+    {
+      "id": "8",
+      "input": "input",
+      "type": "file",
+      "label": "file upload",
+      "placeholder": "",
+      "required": false,
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
+      }
+    },
+    {
+      "id": "9",
+      "input": "input",
+      "type": "time",
+      "label": "Time",
+      "placeholder": "",
+      "required": false,
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
+      }
+    },
+    {
+      "id": "10",
+      "input": "input",
+      "type": "date",
+      "label": "Date",
+      "placeholder": "",
+      "required": false,
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
+      }
+    },
+    {
+      "id": "11",
+      "dropdown": "dropdown",
+      "dropdownOptions": [
+        {
+          "id": "group1",
+          "label": "Group 1",
+          "isOptionGroup": false,
+          "options": [
+            {
+              "id": "item1",
+              "value": "Item 1",
+              "isSelected": true
+            },
+            {
+              "id": "item2",
+              "value": "Item 2",
+              "isSelected": false
+            }
+          ]
+        },
+        {
+          "id": "group2",
+          "label": "Group 2",
+          "isOptionGroup": true,
+          "options": [
+            {
+              "id": "item3",
+              "value": "Item 3"
+            },
+            {
+              "id": "item4",
+              "value": "Item 4"
+            }
+          ]
+        },
+        {
+          "id": "item5",
+          "value": "Item 5"
+        },
+        {
+          "id": "item6",
+          "value": "Item 6",
+          "isSelected": true
+        },
+        {
+          "id": "item7",
+          "value": "Item 7",
+          "isSelected": true
+        }
+      ]
     }
   ]
-} 
+}

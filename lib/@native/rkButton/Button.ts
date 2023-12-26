@@ -1,10 +1,10 @@
-export interface InputTypes {
+export interface ButtonTypes {
   id?: string;
+  button?: string;
   type?: string;
   label?: string;
-  placeholder?: string;
   required?: boolean;
   checkboxLabel?: string;
 }
 
-export class RKInput {}
+export class RKButton {}
