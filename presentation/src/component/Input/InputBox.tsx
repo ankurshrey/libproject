@@ -1,18 +1,20 @@
-
-
-import React, { InputHTMLAttributes } from 'react';
-import { InputTypes } from 'lib/@native/rkInputs/input.rk'
+import React, { InputHTMLAttributes } from "react";
+import { InputTypes } from "lib/@native/rkInputs/input.rk";
 export interface InputBoxProps extends InputHTMLAttributes<HTMLInputElement> {
   // Any additional props you want to accept
-  inputs:InputTypes
+  inputs: InputTypes;
 }
 
 const InputBox = ({ inputs, ...rest }: InputBoxProps) => {
   return (
     <>
-    <label>{inputs.label}</label>
-    <input {...rest} required={inputs.required} type={inputs.type} placeholder={inputs.placeholder}/> 
-
+      <label>{inputs.label}</label>
+      <input
+        {...rest}
+        required={inputs.required}
+        type={inputs.type}
+        placeholder={inputs.placeholder}
+      />
     </>
   );
 };
