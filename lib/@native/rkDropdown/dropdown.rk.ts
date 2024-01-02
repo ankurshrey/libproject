@@ -7,6 +7,7 @@ export interface Options {
   isOptionGroup?: boolean;
   options?: Options[];
   dropdownOptions: string;
+  // ctrl: string;
 }
 
 export interface MySelect {
@@ -18,12 +19,14 @@ export interface MySelect {
   };
   myOption: MyOption[];
   dropdownOptions: string;
+  ctrl: string;
 }
 export interface MyOption {
   id: string;
   value: string;
   selected?: boolean;
   dropdownOptions: string;
+  ctrl: string;
 }
 export interface MyOptgroup {
   label: string;

@@ -7,13 +7,13 @@ import { TextareaTypes } from "lib/@native/rkTextarea/Textarea";
 import Button from "./Button/Button";
 import Textarea from "./TextArea/Textarea";
 import { JSX } from "react/jsx-runtime";
-import { Options } from "lib/@native/rkDropdown/dropdown.rk";
-import Dropdown from "./Dropdown/Dropdown";
+// import Dropdown from "./Dropdown/Dropdown";
+import Dropdown2 from "./Dropdown/Dropdown2";
 
 const PrimaryPage = () => {
   const configPath = useContext(AppContext);
   const [controls, setControls] = useState<
-    InputTypes[] | ButtonTypes[] | TextareaTypes[] | Options[]
+    InputTypes[] | ButtonTypes[] | TextareaTypes[]
   >([]);
 
   // const dropdownOptions: Options[] = [
@@ -103,13 +103,15 @@ const PrimaryPage = () => {
               }}
             />
           ) : "dropdown" in ctrl ? (
-            <Dropdown
-              onChange={(e) => alert(e.target.value + " Dropdown changed")}
-              options={ctrl.dropdownOptions}
-              onBlur={(event) => console.log("Blur event", event)}
-              onFocus={(event) => console.log("Focus event", event)}
-            />
+            // <Dropdown
+            //   onChange={(e) => alert(e.target.value + " Dropdown changed")}
+            //   options={ctrl.dropdownOptions}
+            //   onBlur={(event) => console.log("Blur event", event)}
+            //   onFocus={(event) => console.log("Focus event", event)}
+            // />
+            <Dropdown2 out={ctrl.dropdown} />
           ) : (
+            // <>dropdownOptions</>
             <></>
           )
         )

@@ -1,8 +1,11 @@
-import PrimaryPage from "./component/PrimaryPage";
+import InputMask from "./component/InputMask";
+import Masking from "./component/Masking";
 const App = () => {
   return (
     <div className="App">
-      <PrimaryPage />
+      {/* <PrimaryPage /> */}
+      <Masking />
+      <InputMask />
     </div>
   );
 };
