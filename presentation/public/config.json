@@ -1,15 +1,22 @@
 {
-  "Controls":[
+  "mask":"__/__/____",
+  "inputType": "DATE",
+
+  "mask":"____.__",
+  "inputType": "DECIMAL",
+  
+
+  "Controls": [
     {
       "id": "input1",
       "type": "text",
       "label": "Input 1",
       "placeholder": "Enter text",
       "required": true,
-      "source":{
-        "source":"",
-        "data":"",
-        "uri":""
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
       }
     },
     {
@@ -18,23 +25,23 @@
       "label": "Input 2",
       "placeholder": "Enter number",
       "required": false,
-      "source":{
-        "source":"",
-        "data":"",
-        "uri":""
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
       }
     },
     {
       "id": "input3",
-      "type": "checkbox",
-      "label": "Input 2",
+      "type": "radio",
+      "label": "Input 3",
       "placeholder": "Enter check",
       "required": false,
-      "source":{
-        "source":"",
-        "data":"",
-        "uri":""
+      "source": {
+        "source": "",
+        "data": "",
+        "uri": ""
       }
     }
   ]
-} 
+}

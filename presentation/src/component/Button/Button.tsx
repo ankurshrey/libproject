@@ -11,22 +11,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = ({ children, ...rest }: ButtonProps) => {
   return (
     <>
-    <div>
-    <AppContext.Consumer>
-        {
-        (val)=>{
-          return  <h1>{val}</h1>
-        }
-      }
-        </AppContext.Consumer>
-    </div>
     <button {...rest}>{children} </button>
     </>
-
-
-  )
-
-  
+  ) 
 };
 
 export default Button;

@@ -8,7 +8,6 @@ export interface InputBoxProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const InputBox = ({ inputs, ...rest }: InputBoxProps) => {
-  console.log("InputBox props",inputs)
   return (
     <>
     <label>{inputs.label}</label>
