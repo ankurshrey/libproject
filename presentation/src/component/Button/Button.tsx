@@ -22,10 +22,7 @@ const Button = ({ children, ...rest }: ButtonProps) => {
     </div>
     <button {...rest}>{children} </button>
     </>
-
-
   )
-
   
 };
 

@@ -35,6 +35,18 @@
         "data":"",
         "uri":""
       }
+    },
+    {
+      "id": "email",
+      "type": "email",
+      "label": "Email-",
+      "placeholder": "Enter email",
+      "required": true,
+      "source":{
+        "source":"",
+        "data":"",
+        "uri":""
+      }
     }
   ]
 } 

@@ -11,11 +11,9 @@ const PrimaryPage = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(configPath);
-
         if (!response.ok) {
           throw new Error(`Failed to fetch file: ${response.statusText}`);
         }
-
         const data = await response.json();
         setControls(data.Controls);
       } catch (error) {

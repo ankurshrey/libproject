@@ -1,4 +1,4 @@
-import React ,{ createContext } from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -15,8 +15,8 @@ const AppContext = createContext<any>(undefined);
 root.render(
   <React.StrictMode>
     <AppContext.Provider value='/config.json'  >
-    <App />
-   </AppContext.Provider>
+      <App />
+    </AppContext.Provider>
   </React.StrictMode>
 );
 export { AppContext }
